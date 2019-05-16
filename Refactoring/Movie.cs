@@ -51,6 +51,8 @@ namespace Refactoring
                         _price = new NewReleasePrice();
                     }
                     break;
+                default:
+                    throw new NotImplementedException();
 
             }
         }
