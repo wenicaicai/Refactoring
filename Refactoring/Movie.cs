@@ -14,7 +14,7 @@ namespace Refactoring
         private static int NEW_RELEASE = 1;
 
         private Price _price;
-        public Movie(String title,int priceCode)
+        public Movie(String title, int priceCode)
         {
             _title = title;
             _priceCode = priceCode;

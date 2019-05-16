@@ -9,6 +9,11 @@ namespace Refactoring
         public abstract int getPriceCode();
 
         public abstract double getCharge(int daysRented);
+
+        public int getFrequentRenterPoints(int daysRented)
+        {
+            return 1;
+        }
     }
 
     public class ChildrensPrice : Price
@@ -21,7 +26,7 @@ namespace Refactoring
         public override double getCharge(int daysRented)
         {
             double result = 2;
-            if (daysRented>2)
+            if (daysRented > 2)
             {
                 result += (daysRented - 2) * 1.5;
             }
@@ -44,6 +49,11 @@ namespace Refactoring
             }
             return result;
         }
+
+        public int getFrequentRenterPoints(int daysRented)
+        {
+            return (daysRented > 1) ? 2 : 1;
+        }
     }
 
     public class RegularPrice : Price
@@ -54,7 +64,7 @@ namespace Refactoring
         }
         public override double getCharge(int daysRented)
         {
-            return daysRented * 3 ;
+            return daysRented * 3;
         }
     }
 
